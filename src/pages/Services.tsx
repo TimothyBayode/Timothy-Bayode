@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import GlassmorphicCard from '../components/GlassmorphicCard';
-import { PenToolIcon, CodeIcon, LayoutIcon, SmartphoneIcon, BriefcaseIcon, MonitorIcon, CheckIcon, ArrowRightIcon } from 'lucide-react';
+import { PenToolIcon, CodeIcon, LayoutIcon, BriefcaseIcon, MonitorIcon, CheckIcon, ArrowRightIcon } from 'lucide-react';
 import useDocumentTitle from '../useDocumentTitle';
 
 const Services = () => {

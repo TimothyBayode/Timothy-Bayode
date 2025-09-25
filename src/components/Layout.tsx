@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { MenuIcon, XIcon, GithubIcon, TwitterIcon, InstagramIcon, LinkedinIcon } from 'lucide-react';
+import { MenuIcon, XIcon, Github, Twitter, Instagram, Linkedin, ListTree } from 'lucide-react';
 const Layout = ({
   children
 }: {
@@ -78,17 +78,20 @@ const Layout = ({
                 Creating futuristic designs and seamless front-end experiences.
               </p>
               <div className="flex space-x-4 mt-4">
-                <a href="#" className="text-gray-400 hover:text-white">
-                  <GithubIcon className="h-5 w-5" />
+                <a href="https://github.com/TimothyBayode" target='_blank' className="text-gray-400 hover:text-white">
+                  <Github className="h-5 w-5" />
                 </a>
-                <a href="#" className="text-gray-400 hover:text-white">
-                  <TwitterIcon className="h-5 w-5" />
+                <a href="https://x.com/TimothyBayode" target='_blank' className="text-gray-400 hover:text-white">
+                  <Twitter className="h-5 w-5" />
                 </a>
-                <a href="#" className="text-gray-400 hover:text-white">
-                  <InstagramIcon className="h-5 w-5" />
+                <a href="https://instagram.com/timothybayode_" target='_blank' className="text-gray-400 hover:text-white">
+                  <Instagram className="h-5 w-5" />
                 </a>
-                <a href="#" className="text-gray-400 hover:text-white">
-                  <LinkedinIcon className="h-5 w-5" />
+                <a href="https://linkedin.com/in/timothy-bayode" target='_blank' className="text-gray-400 hover:text-white">
+                  <Linkedin className="h-5 w-5" />
+                </a>
+                <a href="https://timothy-bayode-links.vercel.app/" target='_blank' className="text-gray-400 hover:text-white">
+                  <ListTree className="h-5 w-5" />
                 </a>
               </div>
             </div>

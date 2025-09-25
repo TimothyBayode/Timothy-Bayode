@@ -1,6 +1,6 @@
 import React, { lazy } from 'react';
 import GlassmorphicCard from '../components/GlassmorphicCard';
-import { MapPinIcon, PhoneIcon, MailIcon, ClockIcon, SendIcon } from 'lucide-react';
+import { MapPinIcon, PhoneIcon, MailIcon, ClockIcon, SendIcon, Github, Twitter, Instagram, Linkedin, ListTree } from 'lucide-react';
 import useDocumentTitle from '../useDocumentTitle';
 
 const Contact = () => {
@@ -87,9 +87,31 @@ const Contact = () => {
                   Follow Me
                 </h3>
                 <div className="flex space-x-4">
-                  {['twitter', 'instagram', 'linkedin', 'github'].map(social => <a key={social} href="#" className="w-12 h-12 rounded-full bg-white/10 hover:bg-[#5E4900]/30 flex items-center justify-center transition-all">
-                      <img src={`https://cdn.jsdelivr.net/npm/simple-icons@v6/icons/${social}.svg`} alt={social} className="w-5 h-5 invert opacity-70" />
-                    </a>)}
+                <div className='bg-gray-700 p-2 w-31 h-31 rounded-full -mt-4'>
+                <a href="https://github.com/TimothyBayode" target='_blank' className="text-gray-400 hover:text-white">
+                  <Github className="h-5 w-5" />
+                </a>
+                </div>
+                <div className='bg-gray-700 p-2 w-31 h-31 rounded-full -mt-4'>
+                <a href="https://x.com/TimothyBayode" target='_blank' className="text-gray-400 hover:text-white">
+                  <Twitter className="h-5 w-5" />
+                </a>
+                </div>
+                <div className='bg-gray-700 p-2 w-31 h-31 rounded-full -mt-4'>
+                <a href="https://instagram.com/timothybayode_" target='_blank' className="text-gray-400 hover:text-white">
+                  <Instagram className="h-5 w-5" />
+                </a>
+                </div>
+                <div className='bg-gray-700 p-2 w-31 h-31 rounded-full -mt-4'>
+                <a href="https://linkedin.com/in/timothy-bayode" target='_blank' className="text-gray-400 hover:text-white">
+                  <Linkedin className="h-5 w-5" />
+                </a>
+                </div>
+                <div className='bg-gray-700 p-2 w-31 h-31 rounded-full -mt-4'>
+                <a href="https://timothy-bayode-links.vercel.app/" target='_blank' className="text-gray-400 hover:text-white">
+                  <ListTree className="h-5 w-5" />
+                </a>
+                </div>
                 </div>
               </div>
             </div>
