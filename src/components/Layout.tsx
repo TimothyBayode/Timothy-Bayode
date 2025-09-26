@@ -32,7 +32,7 @@ const Layout = ({
   };
   return <div className="min-h-screen flex flex-col bg-gradient-to-br from-[#1a1500] via-[#302600] to-[#1a1500]">
       {/* Header */}
-      <header className="relative z-10">
+      <header className="fixed top-0 left-0 w-full z-50">
         <div className="backdrop-blur-md bg-black/30 border-b border-[#5E4900]/30">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex justify-between items-center py-4">
@@ -44,7 +44,7 @@ const Layout = ({
               </Link>
               {/* Desktop Navigation */}
               <nav className="hidden md:flex space-x-8">
-                {navLinks.map(link => <Link key={link.path} to={link.path} className={`px-3 py-2 text-sm font-medium rounded-md transition-all duration-300 ${isActive(link.path) ? 'text-white bg-[#5E4900]/80 shadow-lg shadow-[#5E4900]/20' : 'text-gray-300 hover:text-white hover:bg-[#5E4900]/30'}`}>
+                {navLinks.map(link => <Link key={link.path} to={link.path} className={`px-3 py-2 text-sm font-medium rounded-md transition-all duration-1000 ease-in-out ${isActive(link.path) ? 'text-white bg-[#5E4900]/80 shadow-lg shadow-[#5E4900]/20' : 'text-gray-300 hover:text-white hover:bg-[#5E4900]/30'}`}>
                     {link.name}
                   </Link>)}
               </nav>
