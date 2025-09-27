@@ -20,7 +20,7 @@ const Home = () => {
           <div className="flex flex-col lg:flex-row items-center">
             <div className="lg:w-1/2 mb-10 lg:mb-0">
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight">
-                Turning Your Brand's <span className="text-[#5E4900]">Vision</span> Into
+                Turning Your <span className="text-[#5E4900]">Vision</span> Into 
                 <span className="text-[#5E4900]"> Reality</span>
               </h1>
               <p className="mt-6 text-xl text-gray-300 max-w-lg">
