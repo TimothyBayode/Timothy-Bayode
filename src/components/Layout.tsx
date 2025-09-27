@@ -32,7 +32,7 @@ const Layout = ({
   };
   return <div className="min-h-screen flex flex-col bg-gradient-to-br from-[#1a1500] via-[#302600] to-[#1a1500]">
       {/* Header */}
-      <header className="fixed top-0 left-0 w-full z-50">
+      <header className="sticky top-0 z-50">
         <div className="backdrop-blur-md bg-black/30 border-b border-[#5E4900]/30">
           <div className="container mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex justify-between items-center py-4">
@@ -75,7 +75,7 @@ const Layout = ({
             <div>
               <h3 className="text-white font-bold text-lg mb-4">TIMOTHY</h3>
               <p className="text-gray-300 text-sm">
-                Creating futuristic designs and seamless front-end experiences.
+                Creating designs and seamless front-end experiences.
               </p>
               <div className="flex space-x-4 mt-4">
                 <a href="https://github.com/TimothyBayode" target='_blank' className="text-gray-400 hover:text-white">

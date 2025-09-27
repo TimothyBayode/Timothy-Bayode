@@ -6,7 +6,7 @@ import useDocumentTitle from '../useDocumentTitle';
 
 const Services = () => {
 
-  useDocumentTitle("Services I Offer - Graphic Designer | Frontend Developer | UIUX Designer")
+  useDocumentTitle("Services I Offer - Graphic Designer | Frontend Developer | Product Designer")
 
   const services = [{
     icon: <PenToolIcon className="w-8 h-8 text-[#5E4900]" />,
@@ -20,7 +20,7 @@ const Services = () => {
     features: ['Responsive Web Design', 'Performance Optimization', 'Animation & Interaction', 'HTML, CSS & Javascript Development']
   }, {
     icon: <LayoutIcon className="w-8 h-8 text-[#5E4900]" />,
-    title: 'UI/UX Design',
+    title: 'Product Design',
     description: 'User-centered design solutions that enhance the overall user experience.',
     features: ['User Research', 'Wireframing & Prototyping', 'Interface Design', 'Usability Testing', 'Design Systems']
   }, {

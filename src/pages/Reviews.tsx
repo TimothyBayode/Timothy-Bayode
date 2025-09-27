@@ -5,7 +5,7 @@ import useDocumentTitle from '../useDocumentTitle';
 
 const Reviews = () => {
 
-  useDocumentTitle("Clients Reviews and Testimonials - Graphic Designer | Frontend Developer | UIUX Designer")
+  useDocumentTitle("Clients Reviews and Testimonials - Graphic Designer | Frontend Developer | Product Designer")
 
   const testimonials = [{
     id: 1,

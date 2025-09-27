@@ -5,7 +5,7 @@ import useDocumentTitle from '../useDocumentTitle';
 
 const Contact = () => {
 
-  useDocumentTitle("Contact Me - Graphic Designer | Frontend Developer | UIUX Designer")
+  useDocumentTitle("Contact Me - Graphic Designer | Frontend Developer | Product Designer")
 
   return <div className="w-full">
       {/* Hero Section */}

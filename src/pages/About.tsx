@@ -12,7 +12,7 @@ const About = () => {
     name: 'Figma',
     percentage: 85
   }, {
-    name: 'TypeScript/React/TailWind',
+    name: 'React/TailWind',
     percentage: 91
   }, {
     name: 'HTML/CSS/JavaScript',
@@ -25,7 +25,7 @@ const About = () => {
     percentage: 87
   }];
 
-  useDocumentTitle("About Me - Graphic Designer | Frontend Developer | UIUX Designer")
+  useDocumentTitle("About Me - Graphic Designer | Frontend Developer | Product Designer")
 
   
   return <div className="w-full">
@@ -89,7 +89,7 @@ const About = () => {
                 </div>
                 <div className="flex items-center gap-2 bg-[#5E4900]/20 px-4 py-2 rounded-full">
                   <PenToolIcon className="w-5 h-5 text-[#5E4900]" />
-                  <span className="text-white">UI/UX Designer</span>
+                  <span className="text-white">Product Designer</span>
                 </div>
               </div>
             </div>
@@ -147,7 +147,7 @@ const About = () => {
             period: '2021 - 2022',
             description: 'Assisted in designing banners for social media campaigns and events. Gained hands-on experience with design tools and processes.'
           }, {
-            title: 'WordPress Engineer/Hardware Operator [Intern]',
+            title: 'WordPress Content Manager [Intern]',
             company: 'IgbogboBaiyeku LCDA',
             period: 'May - October 2025',
             description: 'I was responsible for managing contents, pages and news upload in the organisation wordpress site. I also worked with other departments to ensure seamless workflow within the organisation.'

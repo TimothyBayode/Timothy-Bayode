@@ -6,7 +6,7 @@ import useDocumentTitle from '../useDocumentTitle';
 
 const Home = () => {
 
-  useDocumentTitle("Timothy Bayode - Graphic Designer | Frontend Developer | UIUX Designer")
+  useDocumentTitle("Timothy Bayode - Graphic Designer | Frontend Developer | Product Designer")
 
   return <div className="w-full">
       {/* Hero Section */}
@@ -88,7 +88,7 @@ const Home = () => {
                 <LayersIcon className="w-8 h-8 text-[#5E4900]" />
               </div>
               <h3 className="text-xl font-bold text-white mb-4">
-                UI/UX Design
+                Product Design
               </h3>
               <p className="text-gray-300 mb-6">
                 Creating intuitive, engaging user experiences and interfaces for
@@ -145,11 +145,11 @@ const Home = () => {
               </GlassmorphicCard>)}
               {[3].map(item => <GlassmorphicCard key={item} className="overflow-hidden group">
                 <div className="relative h-64 overflow-hidden">
-                  <img src="./church.png" alt={`Project ${item}`} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                  <img src="./tacn.png" alt={`Project ${item}`} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 flex items-end p-6">
                     <div>
                       <h3 className="text-xl font-bold text-white">
-                        Modern Website Design
+                        Modern Church Website
                       </h3>
                       <p className="text-gray-300 mt-2">
                         Website Design, React, TypeScript

@@ -5,7 +5,7 @@ import useDocumentTitle from '../useDocumentTitle';
 
 const Projects = () => {
 
-  useDocumentTitle("My Projects - Graphic Designer | Frontend Developer | UIUX Designer")
+  useDocumentTitle("My Projects - Graphic Designer | Frontend Developer | Product Designer")
 
   const [filter, setFilter] = useState('all');
   const categories = [{
@@ -26,10 +26,10 @@ const Projects = () => {
   }];
   const projects = [{
     id: 1,
-    title: 'Neon Finance Dashboard',
+    title: 'Modern Church Website',
     category: 'web',
-    tags: ['UI/UX', 'Web Design', 'React'],
-    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1050&q=80',
+    tags: ['Web Design', 'React'],
+    image: './tacn.png',
     description: 'A futuristic financial dashboard with data visualization and user-friendly interface.'
   }, {
     id: 2,
