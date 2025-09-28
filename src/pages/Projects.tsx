@@ -107,7 +107,7 @@ const Projects = () => {
         './peniel.png',
       description:
         'Brand identity and print design for a gospel recreation centre.',
-      externalLink: '#',
+      externalLink: 'https://www.behance.net/gallery/235508355/Minimalist-Typography-Logo',
     },
     {
       id: 8,
