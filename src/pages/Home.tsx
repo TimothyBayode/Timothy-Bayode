@@ -20,11 +20,11 @@ const Home = () => {
           <div className="flex flex-col lg:flex-row items-center">
             <div className="lg:w-1/2 mb-10 lg:mb-0">
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight">
-                Turning Your <span className="text-[#5E4900]">Vision</span> Into 
+                Turning Your <span className="text-[#5E4900]">Vision</span> Into Digital 
                 <span className="text-[#5E4900]"> Reality</span>
               </h1>
               <p className="mt-6 text-xl text-gray-300 max-w-lg">
-              Hi, I'm Timothy. A Graphic Designer with 3+ years of experience, turning ideas into clean, creative and functional designs.
+              Hi, I'm Timothy. A Graphic Designer and Front-End Developer with 3+ years of experience, turning ideas into clean, creative and functional designs.
               </p>
               <div className="mt-10 flex flex-wrap gap-4">
                 <Link to="/projects" className="px-6 py-3 bg-[#5E4900] hover:bg-[#6E5910] text-white font-medium rounded-md flex items-center gap-2 transition-all">

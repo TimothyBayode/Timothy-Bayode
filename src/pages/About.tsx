@@ -1,6 +1,6 @@
 import React from 'react';
 import GlassmorphicCard from '../components/GlassmorphicCard';
-import { CodeIcon, PenToolIcon, BriefcaseIcon, GraduationCapIcon, DownloadIcon } from 'lucide-react';
+import { CodeIcon, PenToolIcon, BriefcaseIcon, GraduationCapIcon, DownloadIcon, ViewIcon } from 'lucide-react';
 import useDocumentTitle from '../useDocumentTitle';
 import { Link } from 'react-router-dom';
 
@@ -219,10 +219,13 @@ const About = () => {
           <div className='bg-gradient-to-r from-[#5E4900] to-[#78662a] rounded-lg shadow-lg p-8 text-white'>
             <div className='flex flex-col md:flex-row items-center justify-between'>
               <div>
-                <h2 className='text-2xl font-bold mb-2'>Download my CV/Resume</h2>
-                <p className='text-lg mb-4'>Click the button to download</p>
+                <h2 className='text-2xl font-bold mb-2'>Download my Resume</h2>
+                <p className='text-lg mb-4'>Click the button to view or download my resume</p>
               </div>
+              <div className='flex flex-row items-center gap-2 flex-wrap'>
+              <a href="./resume.pdf" target='_blank' rel='noopener norefferer' className='mt-6 md:mt-0 bg-white text-[#5E4900] px-6 py-3 rounded-md font-medium hover:bg-#5E4900-50 transition flex flex:row items-center'>View Resume <ViewIcon size={18} className='ml-2' /></a>
               <a href="./resume.pdf" download rel='noopener norefferer' className='mt-6 md:mt-0 bg-white text-[#5E4900] px-6 py-3 rounded-md font-medium hover:bg-#5E4900-50 transition flex flex:row items-center'>Download <DownloadIcon size={18} className='ml-2' /></a>
+              </div>
             </div>
           </div>
         </div>

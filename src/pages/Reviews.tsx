@@ -79,7 +79,7 @@ const Reviews = () => {
     role: 'Creative Director',
     quote: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam quo nisi, eius illum ea porro, reprehenderit in architecto vitae labore ipsa maxime. Tempora distinctio voluptatibus suscipit neque hic veniam voluptates?',
     rating: 5
-  }];
+  }]; 
   return <div className="w-full">
       {/* Hero Section */}
       <section className="relative py-20 overflow-hidden">
@@ -104,10 +104,10 @@ const Reviews = () => {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {[{
-            number: '50+',
+            number: '20+',
             label: 'Satisfied Clients'
           }, {
-            number: '120+',
+            number: '60+',
             label: 'Projects Completed'
           }, {
             number: '3+',
@@ -122,71 +122,13 @@ const Reviews = () => {
                 <p className="text-white">{stat.label}</p>
               </GlassmorphicCard>)}
           </div>
+          <p className="text-sm text-gray-300 mt-5">
+              Review from clients will be updated soon...
+            </p>
         </div>
       </section>
-      {/* Featured Testimonial */}
-      <section className="py-16">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <GlassmorphicCard className="p-8 md:p-12 max-w-4xl mx-auto">
-            <div className="flex flex-col md:flex-row items-center gap-8">
-              <div className="md:w-1/3">
-                <div className="relative">
-                  <div className="absolute -inset-2 bg-gradient-to-r from-[#5E4900] to-[#9E7900] rounded-full blur opacity-70"></div>
-                  <div className="relative rounded-full overflow-hidden w-48 h-48 mx-auto">
-                    <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Featured Client" className="w-full h-full object-cover" />
-                  </div>
-                </div>
-              </div>
-              <div className="md:w-2/3 text-center md:text-left">
-                <QuoteIcon className="w-12 h-12 text-[#5E4900]/50 mx-auto md:mx-0 mb-4" />
-                <p className="text-white text-xl italic mb-6">
-                  "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam quo nisi, eius illum ea porro, reprehenderit in architecto vitae labore ipsa maxime. Tempora distinctio voluptatibus suscipit neque hic veniam voluptates?"
-                </p>
-                <div>
-                  <h4 className="text-white font-bold text-lg">
-                    Katherine Stevens
-                  </h4>
-                  <p className="text-[#5E4900]">CEO, Elevate Digital</p>
-                </div>
-              </div>
-            </div>
-          </GlassmorphicCard>
-        </div>
-      </section>
-      {/* Testimonials Grid */}
-      <section className="py-16 bg-black/40">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-center text-white mb-16">
-            What My <span className="text-[#5E4900]">Clients Say</span>
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {testimonials.map(testimonial => <GlassmorphicCard key={testimonial.id} className="p-6 hover:bg-white/5 transition-all">
-                <div className="flex items-center mb-6">
-                  <div className="w-16 h-16 rounded-full overflow-hidden mr-4">
-                    <img src={testimonial.image} alt={testimonial.name} className="w-full h-full object-cover" />
-                  </div>
-                  <div>
-                    <h4 className="text-white font-medium">
-                      {testimonial.name}
-                    </h4>
-                    <p className="text-[#5E4900]">{testimonial.role}</p>
-                    <p className="text-gray-400 text-sm">
-                      {testimonial.company}
-                    </p>
-                  </div>
-                </div>
-                <p className="text-gray-300 italic mb-6">
-                  "{testimonial.quote}"
-                </p>
-                <div className="flex">
-                  {[...Array(5)].map((_, i) => <svg key={i} className={`w-5 h-5 ${i < testimonial.rating ? 'text-[#5E4900]' : 'text-gray-600'}`} fill="currentColor" viewBox="0 0 20 20">
-                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                    </svg>)}
-                </div>
-              </GlassmorphicCard>)}
-          </div>
-        </div>
-      </section>
+
+      {/* Paste code from readme for client reviews grid */}
       {/* Video testimonial section goes here (code in readme)- remove this line of code */}
       {/* CTA Section */}
       <section className="py-16 bg-black/40">

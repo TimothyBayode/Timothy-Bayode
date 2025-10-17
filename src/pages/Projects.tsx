@@ -11,16 +11,16 @@ const Projects = () => {
       name: 'Web Design',
     },
     {
-      id: 'mobile',
-      name: 'Mobile Apps',
+      id: 'ui',
+      name: 'UI/UX',
     },
     {
       id: 'branding',
       name: 'Branding',
     },
     {
-      id: 'product',
-      name: 'Product Design',
+      id: 'flyer',
+      name: 'Flyer Design',
     },
     {
       id: 'all',
@@ -41,15 +41,14 @@ const Projects = () => {
     },
     {
       id: 2,
-      title: 'Eco Shop Mobile App',
-      category: 'mobile',
-      tags: ['Mobile App', 'UI Design', 'E-commerce'],
+      title: 'FGH Agro Limited',
+      category: 'branding',
+      tags: ['Branding', 'Agro', 'Design', 'Logo'],
       image:
-        'https://images.unsplash.com/photo-1555774698-0b77e0d5fac6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1050&q=80',
+        './fgh.png',
       description:
         'An e-commerce mobile application for sustainable and eco-friendly products.',
-      projectLink: '/projects/eco-shop-app',
-      externalLink: '#',
+      externalLink: 'https://www.behance.net/gallery/236433655/Minimalist-Logo-for-Agro-Company',
     },
     {
       id: 3,
@@ -61,42 +60,6 @@ const Projects = () => {
       description:
         'Logo design for a tech organisation focusing in web3 space.',
       externalLink: 'https://www.behance.net/gallery/232864003/Minimalist-Logo-Design',
-    },
-    {
-      id: 4,
-      title: 'Wellness Tracker UI',
-      category: 'product',
-      tags: ['UI/UX', 'Health', 'Mobile App'],
-      image:
-        'https://images.unsplash.com/photo-1559028012-481c04fa702d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1050&q=80',
-      description:
-        'User interface design for a health and wellness tracking application.',
-      projectLink: '/projects/wellness-tracker',
-      externalLink: '#',
-    },
-    {
-      id: 5,
-      title: 'Creative Agency Website',
-      category: 'web',
-      tags: ['Web Design', 'React', 'Animation'],
-      image:
-        'https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1050&q=80',
-      description:
-        'A dynamic website for a creative agency with interactive elements and animations.',
-      projectLink: '/projects/creative-agency',
-      externalLink: '#',
-    },
-    {
-      id: 6,
-      title: 'Travel Companion App',
-      category: 'mobile',
-      tags: ['Mobile App', 'UI/UX', 'Travel'],
-      image:
-        'https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1050&q=80',
-      description:
-        'A travel planning and companion app with personalized recommendations.',
-      projectLink: '/projects/travel-companion',
-      externalLink: '#',
     },
     {
       id: 7,
@@ -111,27 +74,14 @@ const Projects = () => {
     },
     {
       id: 8,
-      title: 'Smart Home Control UI',
-      category: 'product',
-      tags: ['UI/UX', 'IoT', 'Dashboard'],
+      title: 'Church Programme Flyer',
+      category: 'flyer',
+      tags: ['Flyer', 'Social Media'],
       image:
-        'https://images.unsplash.com/photo-1558002038-1055e2dae2d7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1050&q=80',
+        './praises.jpg',
       description:
-        'User interface design for a smart home control system and dashboard.',
-      projectLink: '/projects/smart-home-ui',
-      externalLink: '#',
-    },
-    {
-      id: 9,
-      title: 'Educational Platform',
-      category: 'web',
-      tags: ['Web Design', 'E-learning', 'UI/UX'],
-      image:
-        'https://images.unsplash.com/photo-1501504905252-473c47e087f8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1050&q=80',
-      description:
-        'An interactive e-learning platform with course management and student engagement features.',
-      projectLink: '/projects/educational-platform',
-      externalLink: '#',
+        'Social media flyer for a church programme',
+      externalLink: 'https://www.behance.net/gallery/236433473/Church-Programme-Flyer',
     },
   ]
   const filteredProjects =
