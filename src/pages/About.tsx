@@ -223,7 +223,7 @@ const About = () => {
                 <p className='text-lg mb-4'>Click the button to view or download my resume</p>
               </div>
               <div className='flex flex-row items-center gap-2 flex-wrap'>
-              <a href="./resume.pdf" target='_blank' rel='noopener norefferer' className='mt-6 md:mt-0 bg-white text-[#5E4900] px-6 py-3 rounded-md font-medium hover:bg-#5E4900-50 transition flex flex:row items-center'>View Resume <ViewIcon size={18} className='ml-2' /></a>
+              <a href="./resume.pdf" target='_blank' rel='noopener norefferer' className='mt-6 md:mt-0 bg-white text-[#5E4900] px-6 py-3 rounded-md font-medium hover:bg-#5E4900-50 transition flex flex:row items-center'>View <ViewIcon size={18} className='ml-2' /></a>
               <a href="./resume.pdf" download rel='noopener norefferer' className='mt-6 md:mt-0 bg-white text-[#5E4900] px-6 py-3 rounded-md font-medium hover:bg-#5E4900-50 transition flex flex:row items-center'>Download <DownloadIcon size={18} className='ml-2' /></a>
               </div>
             </div>
