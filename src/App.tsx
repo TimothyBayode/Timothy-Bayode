@@ -8,6 +8,7 @@ import Services from './pages/Services';
 import Projects from './pages/Projects';
 import Contact from './pages/Contact';
 import Reviews from './pages/Reviews';
+import Playground from './pages/Playground'
 export function App() {
   return <Router>
       <Layout>
@@ -18,6 +19,7 @@ export function App() {
           <Route path="/projects" element={<Projects />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/reviews" element={<Reviews />} />
+          <Route path="/playground" element={<Playground />} />
         </Routes>
       </Layout>
       <ScrollToTop />
