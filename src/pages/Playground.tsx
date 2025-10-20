@@ -2,8 +2,6 @@ import React, { useEffect, useState, memo } from "react";
 import GlassmorphicCard from '../components/GlassmorphicCard';
 import { AlertTriangleIcon, PlayIcon, RotateCcwIcon } from 'lucide-react';
 import { Editor } from '@monaco-editor/react';
-import useDocumentTitle from '../useDocumentTitle';
-
 const Playground = () => {
   const [language, setLanguage] = useState('html');
   const [code, setCode] = useState('');
@@ -15,65 +13,61 @@ const Playground = () => {
 <html>
 <head>
   <style>
-  body {
-    font-family: Arial, sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-    background: linear-gradient(135deg, #302600, #5E4900);
-    color: white;
-  }
-  .container {
-    text-align: center;
-    padding: 2rem;
-    border-radius: 10px;
-    background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-  }
-  button {
-    background: #5E4900;
-    color: white;
-    border: none;
-    padding: 0.5rem 1rem;
-    border-radius: 4px;
-    cursor: pointer;
-    margin-top: 1rem;
-  }
-</style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background: linear-gradient(135deg, #302600, #5E4900);
+      color: white;
+    }
+    .container {
+      text-align: center;
+      padding: 2rem;
+      border-radius: 10px;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    button {
+      background: #5E4900;
+      color: white;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 4px;
+      cursor: pointer;
+      margin-top: 1rem;
+    }
+  </style>
 </head>
 <body>
   <div class="container">
     <h1>Hello World!</h1>
     <p>This is a simple HTML example</p>
-    <button onclick="alert('Button clicked!')">Click Me</button>
+    <button>Click Me</button>
   </div>
 </body>
 </html>`,
-    javascript: `// Define a function to generate a random color
-function getRandomColor() {
-  const letters = '0123456789ABCDEF';
-  let color = '#';
-  for (let i = 0; i < 6; i++) {
-    color += letters[Math.floor(Math.random() * 16)];
-  }
-  return color;
+    javascript: `// Simple function that returns a greeting
+function greet(name) {
+  return "Hello, " + name + "!";
+}
+// Generate random number between min and max
+function getRandomNumber(min, max) {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 // Create an array of names
 const names = ['Alice', 'Bob', 'Charlie', 'David', 'Eva'];
-// Map through the array and create a greeting for each name
-const greetings = names.map(name => ({
-  name,
-  greeting: "Hello, " + name + "!",
-  color: getRandomColor()
-}));
-// Print the results
-console.log('Generated Greetings:');
-greetings.forEach(person => {
-  console.log(person.greeting + ' (Color: ' + person.color + ')');
-});`,
+// Select a random name
+const randomName = names[getRandomNumber(0, names.length - 1)];
+// Generate and return the greeting
+const greeting = greet(randomName);
+// This will appear in the output panel
+console.log(greeting);
+// Return value will be displayed in the output
+return "Generated greeting: " + greeting;`,
     typescript: `// Define types for our data
 type Person = {
   name: string;
@@ -81,9 +75,10 @@ type Person = {
   skills: string[];
 };
 // Create a function with typed parameters and return value
-function filterBySkill(people: Person[], skill: string): Person[] {
-  return people.filter(person => 
-    person.skills.includes(skill)
+function findYoungestPerson(people: Person[]): Person | null {
+  if (people.length === 0) return null;
+  return people.reduce((youngest, person) => 
+    person.age < youngest.age ? person : youngest
   );
 }
 // Sample data
@@ -93,38 +88,32 @@ const team: Person[] = [
   { name: "Charlie", age: 24, skills: ["JavaScript", "UI Design", "CSS"] },
   { name: "Diana", age: 30, skills: ["TypeScript", "GraphQL", "Testing"] }
 ];
-// Use our function
-const typescriptDevs = filterBySkill(team, "TypeScript");
-// Output results
-console.log("TypeScript Developers:");
-typescriptDevs.forEach(dev => {
-  console.log(\`- \${dev.name} (Age: \${dev.age})\`);
-  console.log(\`  Skills: \${dev.skills.join(", ")}\`);
-});
-// Calculate average age using TypeScript features
-const averageAge = typescriptDevs.reduce(
-  (sum, dev) => sum + dev.age, 0
-) / typescriptDevs.length;
-console.log(\`Average age of TypeScript developers: \${averageAge.toFixed(1)}\`);`,
-    python: `# Define a function to calculate fibonacci numbers
-def fibonacci(n):
-    if n <= 0:
-        return "Please enter a positive integer"
-    elif n == 1:
-        return 0
-    elif n == 2:
-        return 1
-    else:
-        return fibonacci(n-1) + fibonacci(n-2)
-# Create a list of the first 10 fibonacci numbers
-fib_sequence = [fibonacci(i) for i in range(1, 11)]
-# Print the sequence
-print("Fibonacci Sequence:")
-for i, num in enumerate(fib_sequence):
-    print(f"Fibonacci({i+1}) = {num}")
-# Calculate the sum
-total = sum(fib_sequence)
-print(f"Sum of the first 10 Fibonacci numbers: {total}")`,
+// Find the youngest person
+const youngest = findYoungestPerson(team);
+// Display result
+if (youngest) {
+  console.log(\`The youngest person is \${youngest.name} (Age: \${youngest.age})\`);
+  console.log(\`Skills: \${youngest.skills.join(", ")}\`);
+}
+// This will be displayed in the output panel
+return \`The youngest team member is \${youngest?.name} at \${youngest?.age} years old with skills in \${youngest?.skills.join(", ")}\`;`,
+    python: `# Simple Python example
+# Define a function to greet someone
+def greet(name):
+    return f"Hello, {name}! Welcome to Python."
+# Create a list of names
+names = ["Alice", "Bob", "Charlie", "David", "Eva"]
+# Print a simple message
+print("Hello world")
+# Loop through the names and print greetings
+print("\\nGreetings for everyone:")
+for name in names:
+    print(greet(name))
+# Calculate the sum of numbers 1 to 10
+total = sum(range(1, 11))
+print(f"\\nSum of numbers 1 to 10: {total}")
+# Print a farewell message
+print("\\nThanks for using Python!")`,
     java: `public class HelloWorld {
     public static void main(String[] args) {
         System.out.println("Hello, Java World!");
@@ -549,8 +538,7 @@ print("Original: " .. text)
 print("Length: " .. #text)
 print("Uppercase: " .. string.upper(text))
 print("Find 'fun': " .. tostring(string.find(text, "fun")))
-print("Replace: " .. string.gsub(text, "fun", "awesome"))
-`
+print("Replace: " .. string.gsub(text, "fun", "awesome"))`
   };
   // Set default code on language change
   useEffect(() => {
@@ -570,16 +558,31 @@ print("Replace: " .. string.gsub(text, "fun", "awesome"))
         ></iframe>`);
       } else if (language === 'javascript' || language === 'typescript') {
         try {
+          // Capture console.log outputs
+          const logs = [];
+          const originalConsoleLog = console.log;
+          console.log = (...args) => {
+            logs.push(args.map(arg => typeof arg === 'object' ? JSON.stringify(arg) : String(arg)).join(' '));
+            originalConsoleLog(...args);
+          };
           // Create a function from the code and execute it
           const result = new Function(code)();
+          // Restore console.log
+          console.log = originalConsoleLog;
+          // Format the output with both console logs and return value
+          const logOutput = logs.length > 0 ? `<div class="mb-4">
+                <h4 class="text-sm font-semibold text-gray-400 mb-1">Console output:</h4>
+                <pre class="bg-black/50 p-2 rounded text-gray-300 overflow-auto">${logs.join('\n')}</pre>
+              </div>` : '';
+          const returnOutput = result !== undefined ? `<div>
+                <h4 class="text-sm font-semibold text-gray-400 mb-1">Return value:</h4>
+                <pre class="bg-black/50 p-2 rounded text-white overflow-auto">${String(result)}</pre>
+              </div>` : '<div class="text-gray-400">No return value</div>';
           setOutput(`<div class="p-4">
-            <h3 class="text-lg font-semibold text-white mb-2">Output:</h3>
-            <pre class="bg-black/30 p-3 rounded text-gray-300 overflow-auto">${result !== undefined ? String(result) : 'No output'}</pre>
-            <p class="text-gray-400 mt-2 text-sm">Note: Check console for additional outputs</p>
+            <h3 class="text-lg font-semibold text-white mb-3">Output:</h3>
+            ${logOutput}
+            ${returnOutput}
           </div>`);
-          // Execute the code to see console outputs
-          // This is just for the side effects (like console.log)
-          eval(code);
         } catch (error) {
           setOutput(`<div class="p-4">
             <h3 class="text-lg font-semibold text-white mb-2">Error:</h3>
@@ -593,8 +596,7 @@ print("Replace: " .. string.gsub(text, "fun", "awesome"))
           <h3 class="text-lg font-semibold text-white mb-2">Simulated Output:</h3>
           <pre class="bg-black/30 p-3 rounded text-gray-300 overflow-auto">${simulatedOutput}</pre>
           <p class="text-yellow-400 mt-2 flex items-center gap-2">
-            <AlertTriangleIcon className="w-4 h-4" />
-            <span>This is a simulated output. Server-side execution is not available in this playground.</span>
+            <span class="flex items-center gap-1"><AlertTriangleIcon className="w-4 h-4" />Simulated output</span>
           </p>
         </div>`);
       }
@@ -613,6 +615,25 @@ print("Replace: " .. string.gsub(text, "fun", "awesome"))
   const getSimulatedOutput = (lang, code) => {
     switch (lang) {
       case 'python':
+        // Check for simple print statements
+        if (code.includes('print("Hello world")')) {
+          // Extract all print statements for a more accurate simulation
+          const printStatements = [];
+          const printRegex = /print\(["'](.+?)["']\)/g;
+          let match;
+          while ((match = printRegex.exec(code)) !== null) {
+            printStatements.push(match[1]);
+          }
+          // Check for specific patterns in the code
+          if (code.includes('greet') && code.includes('names')) {
+            return 'Hello world\n\nGreetings for everyone:\nHello, Alice! Welcome to Python.\nHello, Bob! Welcome to Python.\nHello, Charlie! Welcome to Python.\nHello, David! Welcome to Python.\nHello, Eva! Welcome to Python.\n\nSum of numbers 1 to 10: 55\n\nThanks for using Python!';
+          }
+          // If we have print statements but not the specific pattern, show them
+          if (printStatements.length > 0) {
+            return printStatements.join('\n');
+          }
+          return 'Hello world';
+        }
         if (code.includes('fibonacci')) {
           return 'Fibonacci Sequence:\nFibonacci(1) = 0\nFibonacci(2) = 1\nFibonacci(3) = 1\nFibonacci(4) = 2\nFibonacci(5) = 3\nFibonacci(6) = 5\nFibonacci(7) = 8\nFibonacci(8) = 13\nFibonacci(9) = 21\nFibonacci(10) = 34\nSum of the first 10 Fibonacci numbers: 88';
         }
@@ -656,9 +677,6 @@ print("Replace: " .. string.gsub(text, "fun", "awesome"))
         return 'Program executed successfully.\nThis is a simulated output.';
     }
   };
-
-  useDocumentTitle("Code Playground - Experiment, Learn and Play with code.")
-
   return <div className="w-full">
       {/* Hero Section */}
       <section className="relative py-20 overflow-hidden">
@@ -686,7 +704,7 @@ print("Replace: " .. string.gsub(text, "fun", "awesome"))
               <div>
                 <h3 className="text-lg font-semibold text-white mb-1">Disclaimer</h3>
                 <p className="text-gray-300">
-                  This playground is for educational and entertainment purposes only. Any code you write here will not be stored and will be lost as soon as you leave this page. 
+                  This playground is for educational and entertainment purposes only. Any code you write here will not be stored and will be lost when you leave this page. 
                   Server-side languages (Python, Java, etc.) are simulated and not actually executed.
                 </p>
               </div>
@@ -700,10 +718,10 @@ print("Replace: " .. string.gsub(text, "fun", "awesome"))
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
             {/* Code Editor Side */}
             <GlassmorphicCard className="overflow-hidden flex flex-col">
-              <div className="p-4 border-b border-white/10 flex justify-between items-center">
-                <div className="flex items-center gap-3">
-                  <label htmlFor="language-select" className="text-white">Language:</label>
-                  <select id="language-select" value={language} onChange={handleLanguageChange} className="bg-black/30 text-white border border-[#5E4900]/50 rounded px-3 py-1 focus:outline-none focus:border-[#5E4900]">
+              <div className="p-4 border-b border-white/10 flex flex-wrap justify-between items-center gap-2">
+                <div className="flex items-center gap-2">
+                  <label htmlFor="language-select" className="text-white text-sm md:text-base">Language:</label>
+                  <select id="language-select" value={language} onChange={handleLanguageChange} className="bg-black/30 text-white border border-[#5E4900]/50 rounded px-2 py-1 text-sm md:text-base focus:outline-none focus:border-[#5E4900]">
                     <option value="html">HTML + CSS + JS</option>
                     <option value="javascript">JavaScript</option>
                     <option value="typescript">TypeScript</option>
@@ -717,25 +735,39 @@ print("Replace: " .. string.gsub(text, "fun", "awesome"))
                   </select>
                 </div>
                 <div className="flex gap-2">
-                  <button onClick={resetCode} className="bg-black/30 hover:bg-black/50 text-white px-3 py-1 rounded flex items-center gap-1 transition-colors" title="Reset to default code">
+                  <button onClick={resetCode} className="bg-black/30 hover:bg-black/50 text-white px-2 py-1 rounded flex items-center gap-1 transition-colors text-sm md:text-base" title="Reset to default code">
                     <RotateCcwIcon className="w-4 h-4" />
                     <span className="hidden sm:inline">Reset</span>
                   </button>
-                  <button onClick={runCode} className="bg-[#5E4900] hover:bg-[#6E5910] text-white px-4 py-1 rounded flex items-center gap-1 transition-colors" disabled={isRunning}>
+                  <button onClick={runCode} className="bg-[#5E4900] hover:bg-[#6E5910] text-white px-3 py-1 rounded flex items-center gap-1 transition-colors text-sm md:text-base" disabled={isRunning}>
                     <PlayIcon className="w-4 h-4" />
                     <span>Run</span>
                   </button>
                 </div>
               </div>
-              <div className="h-[500px] w-full">
+              <div className="h-[400px] md:h-[500px] w-full">
                 <Editor height="100%" language={language === 'html' ? 'html' : language} value={code} onChange={setCode} theme="vs-dark" options={{
                 minimap: {
                   enabled: false
                 },
                 fontSize: 14,
                 wordWrap: 'on',
-                scrollBeyondLastLine: false,
-                automaticLayout: true
+                scrollBeyondLastLine: true,
+                automaticLayout: true,
+                tabSize: 2,
+                fixedOverflowWidgets: true,
+                contextmenu: true,
+                copyWithSyntaxHighlighting: true,
+                // Mobile optimization
+                quickSuggestions: true,
+                folding: false,
+                lineNumbers: 'on',
+                renderLineHighlight: 'none',
+                // Touch handling
+                mouseWheelZoom: true,
+                // Better copy/paste experience
+                formatOnPaste: true,
+                copyWithSyntaxHighlighting: true
               }} />
               </div>
             </GlassmorphicCard>
@@ -744,12 +776,12 @@ print("Replace: " .. string.gsub(text, "fun", "awesome"))
               <div className="p-4 border-b border-white/10">
                 <h3 className="text-white font-medium">Output</h3>
               </div>
-              <div className="h-[500px] w-full bg-black/20 overflow-auto">
+              <div className="h-[400px] md:h-[500px] w-full bg-black/20 overflow-auto">
                 {output ? <div dangerouslySetInnerHTML={{
                 __html: output
               }} className="h-full" /> : <div className="p-6 text-center flex items-center justify-center h-full">
                     <p className="text-gray-400">
-                      Click the "Run" button to see your code in action
+                      Click the "Run" button to see your code result here
                     </p>
                   </div>}
               </div>
