@@ -1,6 +1,6 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import GlassmorphicCard from '../components/GlassmorphicCard'
-import { ExternalLinkIcon, ArrowRightIcon } from 'lucide-react'
+import { ExternalLinkIcon } from 'lucide-react'
 import useDocumentTitle from '../useDocumentTitle';
 
 const Projects = () => {
@@ -82,6 +82,17 @@ const Projects = () => {
       description:
         'Social media flyer for a church programme',
       externalLink: 'https://www.behance.net/gallery/236433473/Church-Programme-Flyer',
+    },
+    {
+      id: 8,
+      title: 'TradeFair Social Media Flyer Design',
+      category: 'flyer',
+      tags: ['Flyer', 'Social Media'],
+      image:
+        './tradefair.png',
+      description:
+        'Social media flyer design for a tradefair event.',
+      externalLink: 'https://www.behance.net/gallery/239095377/TradeFair-Social-Media-Flyer-Design',
     },
   ]
   const filteredProjects =
