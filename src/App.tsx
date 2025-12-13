@@ -25,7 +25,7 @@ export function App() {
       </Layout>
       <Snowfall
         color="white"
-        snowflakeCount={250}
+        snowflakeCount={100}
         speed={[1, 3]}
         wind={[-0.5, 2]}
         radius={[0.5, 3]}
