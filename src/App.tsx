@@ -8,7 +8,6 @@ import Projects from "./pages/Projects";
 import Contact from "./pages/Contact";
 import Reviews from "./pages/Reviews";
 import Playground from "./pages/Playground";
-import Snowfall from "react-snowfall";
 export function App() {
   return (
     <Router>
@@ -23,19 +22,6 @@ export function App() {
           <Route path="/playground" element={<Playground />} />
         </Routes>
       </Layout>
-      <Snowfall
-        color="white"
-        snowflakeCount={100}
-        speed={[1, 3]}
-        wind={[-0.5, 2]}
-        radius={[0.5, 3]}
-        style={{
-          position: "fixed",
-          width: "100%",
-          height: "100%",
-          zIndex: 9999,
-        }}
-      />
       <ScrollToTop />
     </Router>
   );
